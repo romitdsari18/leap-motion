@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmdConnectLeapMotion = new System.Windows.Forms.Button();
             this.handPosX = new System.Windows.Forms.TextBox();
             this.handPosY = new System.Windows.Forms.TextBox();
@@ -48,7 +49,10 @@
             this.ScreenPosX = new System.Windows.Forms.TextBox();
             this.ScreenPosY = new System.Windows.Forms.TextBox();
             this.ScreenPosZ = new System.Windows.Forms.TextBox();
-            this.Confidence = new System.Windows.Forms.TextBox();
+            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
+            this.distance = new System.Windows.Forms.TextBox();
+            this.cmdSetPoint1 = new System.Windows.Forms.Button();
+            this.cmdSetPoint2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdConnectLeapMotion
@@ -207,19 +211,57 @@
             this.ScreenPosZ.Size = new System.Drawing.Size(100, 22);
             this.ScreenPosZ.TabIndex = 19;
             // 
-            // Confidence
+            // zedGraphControl1
             // 
-            this.Confidence.Location = new System.Drawing.Point(143, 42);
-            this.Confidence.Name = "Confidence";
-            this.Confidence.Size = new System.Drawing.Size(100, 22);
-            this.Confidence.TabIndex = 20;
+            this.zedGraphControl1.Location = new System.Drawing.Point(401, 12);
+            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.zedGraphControl1.Name = "zedGraphControl1";
+            this.zedGraphControl1.ScrollGrace = 0D;
+            this.zedGraphControl1.ScrollMaxX = 0D;
+            this.zedGraphControl1.ScrollMaxY = 0D;
+            this.zedGraphControl1.ScrollMaxY2 = 0D;
+            this.zedGraphControl1.ScrollMinX = 0D;
+            this.zedGraphControl1.ScrollMinY = 0D;
+            this.zedGraphControl1.ScrollMinY2 = 0D;
+            this.zedGraphControl1.Size = new System.Drawing.Size(386, 354);
+            this.zedGraphControl1.TabIndex = 20;
+            // 
+            // distance
+            // 
+            this.distance.Location = new System.Drawing.Point(267, 343);
+            this.distance.Name = "distance";
+            this.distance.Size = new System.Drawing.Size(100, 22);
+            this.distance.TabIndex = 22;
+            // 
+            // cmdSetPoint1
+            // 
+            this.cmdSetPoint1.Location = new System.Drawing.Point(38, 342);
+            this.cmdSetPoint1.Name = "cmdSetPoint1";
+            this.cmdSetPoint1.Size = new System.Drawing.Size(75, 23);
+            this.cmdSetPoint1.TabIndex = 24;
+            this.cmdSetPoint1.Text = "Point1";
+            this.cmdSetPoint1.UseVisualStyleBackColor = true;
+            this.cmdSetPoint1.Click += new System.EventHandler(this.CmdSetPoint1_Click);
+            // 
+            // cmdSetPoint2
+            // 
+            this.cmdSetPoint2.Location = new System.Drawing.Point(165, 343);
+            this.cmdSetPoint2.Name = "cmdSetPoint2";
+            this.cmdSetPoint2.Size = new System.Drawing.Size(75, 23);
+            this.cmdSetPoint2.TabIndex = 25;
+            this.cmdSetPoint2.Text = "Point2";
+            this.cmdSetPoint2.UseVisualStyleBackColor = true;
+            this.cmdSetPoint2.Click += new System.EventHandler(this.CmdSetPoint2_Click);
             // 
             // LeapMotionCoOrdinatesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Confidence);
+            this.Controls.Add(this.cmdSetPoint2);
+            this.Controls.Add(this.cmdSetPoint1);
+            this.Controls.Add(this.distance);
+            this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.ScreenPosZ);
             this.Controls.Add(this.ScreenPosY);
             this.Controls.Add(this.ScreenPosX);
@@ -269,7 +311,10 @@
         private System.Windows.Forms.TextBox ScreenPosX;
         private System.Windows.Forms.TextBox ScreenPosY;
         private System.Windows.Forms.TextBox ScreenPosZ;
-        private System.Windows.Forms.TextBox Confidence;
+        private ZedGraph.ZedGraphControl zedGraphControl1;
+        private System.Windows.Forms.TextBox distance;
+        private System.Windows.Forms.Button cmdSetPoint1;
+        private System.Windows.Forms.Button cmdSetPoint2;
     }
 }
 
